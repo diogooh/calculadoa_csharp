@@ -41,7 +41,7 @@ namespace Calculadora
                 result = 1;
                 return result;
             }
-            else if (lad1 != lad2 && lad1 != lad2 && lad2 != lad3)
+            else if (lad1 != lad2 && lad1 != lad3 && lad2 != lad3)
             {
                 result = 2;
                 return result;
@@ -59,7 +59,7 @@ namespace Calculadora
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Introduza a sua opção que deseja:\n 1-Soma \n 2-Subtração\n 3-Multiplicação\n 4-Divisão\n 5-Área do Triângulo e classificar quanto aos lados.\n ");
+            Console.WriteLine("Introduza a sua opção que deseja:\n 1-Soma \n 2-Subtração\n 3-Multiplicação\n 4-Divisão\n 5-Área do Triângulo\n 6-classificar quanto aos lados.\n ");
             int menu = int.Parse(Console.ReadLine());
             switch (menu)
             {
@@ -104,12 +104,21 @@ namespace Calculadora
                     int num10 = int.Parse(Console.ReadLine());
                     area(num9, num10);
                     Console.WriteLine($"Resultado: {area(num9, num10)}");
-
+                    break; 
+                case 6:
                     //Classificar os lados
-                    clas();
-
-
-
+                    float resultado = 0;
+                    resultado = clas();
+                    if( resultado == 1 )
+                    {
+                        Console.WriteLine("Triangulo é Equilátero");
+                    } else if( resultado == 2)
+                    {
+                        Console.WriteLine("Triângulo é Escaleno");
+                    } else
+                    {
+                        Console.WriteLine("Triângulo é Isósceles");
+                    }
                     break;
                 default: Console.WriteLine("Erro, repita o programa, digitou algum caracter errado ou algum número não pedido"); break;
             }
