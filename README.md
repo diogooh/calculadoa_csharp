@@ -1,2 +1,2 @@
 # calculadoa_csharp
-Primeiro teste de C#.
+Primeiro programa que desenvolvi em C#, neste caso foi uma calculadora!
